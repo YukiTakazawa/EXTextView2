@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: InspectableTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //textField.delegate = self
         // Do any additional setup after loading the view.
     }
-
-
+    
+//    func textViewDidChange(_ textView: UITextView) {
+//        let beforeStr: String = textField.text // 文字列をあらかじめ取得しておく
+//        if beforeStr.count > 10 { // 10000字を超えた時
+//            // 以下，範囲指定する
+//            textField.text = String(textField.text.prefix(10))
+//        }
+//    }
 }
 

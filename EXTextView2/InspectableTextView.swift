@@ -27,7 +27,7 @@ import UIKit
     
     /// プレースホルダーを設定する
     private func configurePlaceholder() {
-        placeholderLabel.textColor = UIColor.white
+        placeholderLabel.textColor = UIColor.gray
         addSubview(placeholderLabel)
     }
     
@@ -43,5 +43,11 @@ extension InspectableTextView: UITextViewDelegate {
     /// テキストが書き換えられるたびに呼ばれる ※privateにはできない
     func textViewDidChange(_ textView: UITextView) {
         togglePlaceholder()
+        
+        //UITextViewの文字入力を任意の文字数に制限する
+        let beforeStr: String = textView.text
+        if beforeStr.count > 5 {
+            textView.text = String(textView.text.prefix(5))
+        }
     }
 }
