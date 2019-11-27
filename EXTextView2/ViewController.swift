@@ -8,22 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var textField: InspectableTextView!
+class ViewController: UIViewController,UITextViewDelegate {
+    
+    @IBOutlet weak var Post_Text: InspectableTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //textField.delegate = self
-        // Do any additional setup after loading the view.
+        //カーソルの色を変更
+        Post_Text.tintColor = UIColor.green
+        //枠の色
+        Post_Text.layer.borderColor = UIColor.gray.cgColor
+        // 枠の幅
+        Post_Text.layer.borderWidth = 1.0
+       // Post_Text.delegate = self
     }
-    
-//    func textViewDidChange(_ textView: UITextView) {
-//        let beforeStr: String = textField.text // 文字列をあらかじめ取得しておく
-//        if beforeStr.count > 10 { // 10000字を超えた時
-//            // 以下，範囲指定する
-//            textField.text = String(textField.text.prefix(10))
-//        }
-//    }
 }
 
